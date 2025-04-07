@@ -10,7 +10,16 @@ from loader import dp, bot
 logging.basicConfig(level=logging.INFO)
 
 
-link_pattern = re.compile(r"(https?://\S+|t\.me/\S+|\S+\.(com|net|org|ru|io|xyz|site))", re.IGNORECASE)
+link_pattern = re.compile(
+    r"""(
+        https?://\S+ |                    
+        t\.me/[\w\d_+/]+ |                
+        joinchat/\S+ |                    
+        \S+\.(com|net|org|ru|uz|io|xyz|site|store|info|app|online|biz) |
+        @[\w\d_]*bot\b                   # Mentions of bots (e.g. @somebot)
+    )""",
+    re.IGNORECASE | re.VERBOSE
+)
 
 
 @dp.message_handler(CommandStart(), state="*")
