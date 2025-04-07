@@ -1,4 +1,6 @@
-
+from aiogram import executor
+from loader import dp
+import middlewares, filters, handlers
 
 
 async def on_startup(dispatcher):
