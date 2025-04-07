@@ -24,7 +24,7 @@ link_pattern = re.compile(
 
 @dp.message_handler(CommandStart(), state="*")
 async def bot_start(message: types.Message):
-    await bot.send_message(chat_id = message.from_user.id, text = """Добавьте меня в группу и я будут удалять все рекламы
+    await bot.send_message(chat_id = message.from_user.id, text = """Добавьте меня в группу и я буду удалять все рекламы
 Meni guruhga qo'shing va men hamma reklamalarni o'chirib tashlayman""")
     await message.delete()
     
