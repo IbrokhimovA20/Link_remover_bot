@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      network: host            
     restart: always
+    network_mode: host
     volumes:
       - .:/remove-link
